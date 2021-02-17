@@ -1,0 +1,100 @@
+#container
+{    			 
+	text-align: center;
+    width: 407px;
+    margin: 0 auto; 
+}
+
+#interface
+{     
+    display: flex;  
+    -webkit-user-select: none; 
+    user-select: none;       
+}
+
+#interface_button, #interface_score-field, #record
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33.33%;
+    height: 45px;
+    font-size: 18px;    
+}
+
+#interface_button
+{    
+    background: #cadce6;
+    border: none;     
+    border-right: 1px solid #0066cb73;    
+}
+
+#interface_button:hover
+{
+    background: #b6c8dc;  
+}
+
+#interface_button:focus
+{
+    outline: none;
+}
+
+#interface_button img
+{
+    width: 18px;
+}
+
+.refreshing
+{
+    transform: rotate(360deg);
+    transition: transform .6s ease;
+
+}
+
+#interface_score-field
+{    
+    background: black;
+    color: white;
+}
+
+#record
+{
+    background: #cde6ca;        
+}
+
+#record img
+{
+    width: 24px;
+    margin-right: 3px;
+}
+
+#msg-box
+{
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    position: absolute;      
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1; 
+    
+}
+
+#wrapper
+{    
+    padding: 8px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, .8);    
+    box-shadow: 0 0 1em #444;
+    font: 16px Arial, sans-serif;     
+}
+
+#wrapper div
+{
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: .9em;   
+}
