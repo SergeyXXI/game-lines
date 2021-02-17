@@ -71,7 +71,7 @@ const initBoard = () =>
 	{ 
 		ctx.drawImage(board, 0, 0);
 
-		setTimeout(() => drawBalls(5), 10);		
+		setTimeout(() => drawBalls(5), 20);		
 				
 	};		
 	
