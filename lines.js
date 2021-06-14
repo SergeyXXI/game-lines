@@ -1,16 +1,6 @@
 var field, subfield, positionsPool, newbuf, chosen, numOfBalls;
 
-const initField = () =>
-{	
-	var arr = new Array(9);
-	for(var i = 0; i < 9; i++)
-	{
-		 arr[i] = new Array(9);
-		 arr[i] = arr[i].fill(0);
-	}
-	
-	return arr;		
-};
+const initField = () => new Array(9).fill(0).map(el => el = new Array(9).fill(0));
 
 const createPositionsPool = () =>
 {
@@ -331,7 +321,7 @@ const checkDelete = (i, j, color) =>
 	if(deleteBalls()) return { state: true, delbuf, color };
 	
 	return {state: false};
-} 
+}
 
 export {setInitialSettings, setGameState, getPositionFromPool,
 	    checkCanvasClick, checkNewLines, checkDelete, numOfBalls};

@@ -4,22 +4,14 @@ import {setInitialSettings, getPositionFromPool, checkCanvasClick,
 const canvas 	   = document.getElementById("canvas"),
 	  ctx    	   = canvas.getContext("2d"),
 	  container    = document.getElementById("container"),
-	  interfaceBtn = document.getElementById("interface_button"),
+	  interfaceBtn = document.getElementById("interface__button"),
 	  refreshImg   = interfaceBtn.querySelector("img"),
-	  scoreField   = document.getElementById("interface_score-field"),
+	  scoreField   = document.getElementById("interface__score-field"),
 	  recordField  = document.getElementById("record"),
 	  board = new Image(), ballsImg = new Image(), animImg = new Image(), delAnimImg = new Image(),
  	  cutWidth = 40, cutHeight = 39, dx = 4, dy = 8, squareShift = 45;
 
 var animationTimer, record, ballsSpawn = 3, numOfPts = 0;
-
-const initLoadingImages = () =>
-{
-	board.src = "src/board.png";
-	ballsImg.src = "src/balls.png";
-	animImg.src = "src/jumpballs.png";	
-	delAnimImg.src = "src/outballs.png";	
-};
 
 const getRecord = () =>
 {
@@ -35,7 +27,7 @@ const getRecord = () =>
 };
 
 const drawBalls = amount =>
-{
+{	
 	var i, j, color, num;
 	
 	for(var newBalls = 0; newBalls < amount; newBalls++)
@@ -59,22 +51,25 @@ const drawBalls = amount =>
 }
 
 const initBoard = () =>
-{	
+{
 	setInitialSettings();
 
 	canvas.width = 407;
 	canvas.height = 414;
 	
-	getRecord();	
-	
+	getRecord();
+
+	board.src = "img/board.png";
 	board.onload = () =>
-	{ 
+	{
 		ctx.drawImage(board, 0, 0);
 
-		setTimeout(() => drawBalls(5), 20);		
-				
-	};		
-	
+		ballsImg.src = "img/balls.png";
+		ballsImg.onload = () => drawBalls(5);
+	};
+
+	animImg.src = "img/jumpballs.png";	
+	delAnimImg.src = "img/outballs.png";	
 };
 
 const initRestart = () =>
@@ -276,4 +271,4 @@ const drawDeleteFrame = (i, j, color, frame = 0) =>
 	else  		   ctx.fillRect(dx + squareShift * i, dy + squareShift * j, cutWidth, cutHeight);	
 };
 
-export{initLoadingImages, initBoard, initRestart, initAnimation};
+export{initBoard, initRestart, initAnimation};
